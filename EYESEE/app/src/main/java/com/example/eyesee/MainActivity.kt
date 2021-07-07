@@ -33,9 +33,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
         }
         else{
-
-            //var ch : String = "Soccer ball"
-            //textToSpeech.speak("Soccer ball",TextToSpeech.QUEUE_FLUSH,null)
             Toast.makeText(this,"Initialisation Error",Toast.LENGTH_LONG).show()
         }
     }
@@ -103,7 +100,4 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         }
         return ind
     }
-
-
-
 }
