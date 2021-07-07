@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#292C2E"
     tools:context=".MainActivity">
 
     <ImageView
@@ -15,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.07"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/logo_white" />
 
     <Button
         android:id="@+id/button3"
@@ -24,6 +25,7 @@
         android:layout_marginTop="76dp"
         android:layout_marginEnd="52dp"
         android:text="Select"
+        android:background="454b4e"
         app:layout_constraintEnd_toStartOf="@+id/button4"
         app:layout_constraintHorizontal_bias="0.322"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
         android:layout_marginEnd="44dp"
+        android:background="454b4e"
         android:text="Predict"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -44,7 +47,9 @@
         android:layout_width="201dp"
         android:layout_height="165dp"
         android:layout_marginTop="220dp"
+        android:background="#292C2E"
         android:text="Select And Press Predict"
+        android:textColor="#A3A3A3"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +59,9 @@
         android:id="@+id/tts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#e4e4de"
         android:text="Text To Speech"
+        android:backgroundTint="e4e4de"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
