@@ -24,12 +24,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
         android:layout_marginEnd="52dp"
+        android:background="@color/teal_200"
+
         android:text="Select"
-        android:background="#454b4e"
+        android:textColor="@color/black"
+        android:textColorHighlight="#090000"
+        android:textColorHint="#000000"
+        android:textColorLink="#000000"
         app:layout_constraintEnd_toStartOf="@+id/button4"
         app:layout_constraintHorizontal_bias="0.322"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:strokeColor="#FFFFFF" />
 
     <Button
         android:id="@+id/button4"
@@ -37,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
         android:layout_marginEnd="44dp"
-        android:background="#454b4e"
+        android:background="@color/teal_200"
         android:text="Predict"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -46,22 +52,23 @@
         android:id="@+id/textView"
         android:layout_width="201dp"
         android:layout_height="165dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="216dp"
         android:background="#292C2E"
-        android:text="Select And Press Predict"
-        android:textColor="#A3A3A3"
+        android:text=""
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
         android:id="@+id/tts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#e4e4de"
+        android:layout_width="139dp"
+        android:layout_height="66dp"
+        android:background="@color/teal_200"
+        android:backgroundTint="#03DAC5"
         android:text="Text To Speech"
-        android:backgroundTint="#e4e4de"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
