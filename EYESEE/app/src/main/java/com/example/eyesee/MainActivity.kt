@@ -1,5 +1,5 @@
 package com.example.eyesee
-
+import android.speech.tts.TextToSpeech
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -14,7 +14,7 @@ import com.example.eyesee.ml.MobilenetV110224Quant
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
-import android.speech.tts.TextToSpeech
+
 import android.widget.Toast
 import java.util.*
 
@@ -23,7 +23,30 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     lateinit var bitmap: Bitmap
     lateinit var imgview:ImageView
     lateinit var textToSpeech: TextToSpeech
+    var ind = 0
+    override fun onInit(status: Int) {
 
+        if(status == TextToSpeech.SUCCESS){
+            val res : Int = textToSpeech.setLanguage(Locale.US)
+            if(res == TextToSpeech.LANG_MISSING_DATA || res == TextToSpeech.LANG_NOT_SUPPORTED){
+                Toast.makeText(this,"Language Not Supported",Toast.LENGTH_LONG).show()
+            }
+        }
+        else{
+
+            //var ch : String = "Soccer ball"
+            //textToSpeech.speak("Soccer ball",TextToSpeech.QUEUE_FLUSH,null)
+            Toast.makeText(this,"Initialisation Error",Toast.LENGTH_LONG).show()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if(textToSpeech != null){
+            textToSpeech.stop()
+            textToSpeech.shutdown()
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -31,10 +54,10 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         val fileName = "label.txt"
         val inputString = application.assets.open(fileName).bufferedReader().use { it.readText() }
         var townList = inputString.split("\n")
-        var btn : Button = findViewById(R.id.btn)
+        var tts : Button = findViewById(R.id.tts)
         textToSpeech = TextToSpeech(this,this)
-        btn.setOnClickListener {
-            var ch : String = "Hello"
+        tts.setOnClickListener {
+            var ch : String = townList[ind]
             textToSpeech.speak(ch,TextToSpeech.QUEUE_FLUSH,null)
         }
         var tv:TextView = findViewById(R.id.textView)
@@ -68,7 +91,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     }
 
     fun getMax(arr:FloatArray) : Int{
-        var ind = 0
+
         var min = 0.0f
         for(i in 0..1000)
         {
@@ -81,24 +104,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         return ind
     }
 
-    override fun onInit(status: Int) {
-        if(status == TextToSpeech.SUCCESS){
-            val res : Int = textToSpeech.setLanguage(Locale.US)
-            if(res == TextToSpeech.LANG_MISSING_DATA || res == TextToSpeech.LANG_NOT_SUPPORTED){
-                Toast.makeText(this,"Language Not Supported",Toast.LENGTH_LONG).show()
-            }
-        }
-        else{
-            Toast.makeText(this,"fuck ho raha hai",Toast.LENGTH_LONG).show()
-        }
-    }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        if(textToSpeech != null){
-            textToSpeech.stop()
-            textToSpeech.shutdown()
-        }
-    }
 
 }
