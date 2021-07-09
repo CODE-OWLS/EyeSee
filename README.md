@@ -26,18 +26,4 @@ The app we've created has a lot of potential for helping people with vision impa
 Conclusion and Future Work:
 
 The app that we have developed has a huge potential and can work wonders to help the people with limited or total visual disabilities. There are still a lot of improvements that we can do that can make this app even better and we will keep on trying to make this better.
-
 Future Work includes adding the support of various other international and national languages that could aid more people across the globe. Adding OCR capabilities.
-
-
-
-References:
-
-Udemy Courses -
-www.udemy.com/course/image-recognition-in-android-one-hour-bootcampkotlin/
-www.udemy.com/course/learn-android-app-development-from-scratch-withjava/
-Coursera Courses -
-www.coursera.org/specializations/deep-learning
-www.coursera.org/specializations/android-app-development
-
-
